@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 ul {
@@ -66,8 +67,138 @@ ul {
       background-color: #0097a7; 
     }
 
+  } 
+}
+
+.hero-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: #EBFAFF; /* Light background */
+  text-align: center;
+  
+
+  .hero-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1200px;
   }
   
-    
+  .text-content {
+    flex: 1;
+    max-width: 400px;
+    margin-right:140px ;
+    text-align: left;
+  }
+  
+  .text-content h1 {
+    font-size: 2.9rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    position: relative; /* Allow adjustment using top */
+    top: -30px;
+  }
+  
+  .text-content .highlight1 {
+    color: #1088B2;
+  }
+  .text-content .highlight2 {
+    color: #2B318A;
+  }
+  
+  .text-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+    position: relative; /* Allow adjustment using top */
+    top: -30px;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .buttons .btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .buttons .btn.explore {
+    background-color: #000;
+    color: #fff;
+    border: black solid 2px;
+    position: relative; /* Allow adjustment using top */
+    top: -10px;
+  }
+  
+  .buttons .btn.join {
+    background-color: #e5f1ff;
+    color: #000000;
+    border: #000 solid 2px;
+    position: relative; /* Allow adjustment using top */
+    top: -10px;
+  }
+  
+  .hero-image {
+    flex: 1;
+    max-width: 540px;
+  }
+  
+  .hero-image img {
+    width: 100%;
+  }
+  
+  .star {
+    position: absolute;
+    width: 32px; /* Adjust size as needed */
+    height: 32px;
+  }
+  
+  .star1 {
+    top: 150px;
+    left: 590px;
+  }
+  
+  .star2 {
+    top: 455px;
+    left: 345px;
+  }
+  
+  .star3 {
+    top: 150px;
+    left: 160px;
+  }
+
+  .community-section {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  
+  .community-section .avatars img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    transform: translate(-390px, -90px)
+  }
+  
+  .community-section p {
+    font-size: 1rem;
+    color: #555;
+    transform: translate(-393px, -93px)
+
+  }
   
 }
