@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-
 function PopularReads() {
-    const [books, setBooks] = useState([]);  // State to hold books data
-
+    const [books, setBooks] = useState([]);
 
     useEffect(() => {
         fetch("http://localhost:5000/api/books")
@@ -16,30 +14,50 @@ function PopularReads() {
             });
     }, []);
 
-
-    return(
+    return (
         <div className="popular-reads">
             {books.map((book) => (
-                <div key={book._id} className="book-card">
+                <div
+                    key={book._id}
+                    className="book-card"
+                >
                     <img
-                        src={book.cover}  // Display the book cover image
+                        src={book.cover}
                         alt={book.title}
                         className="book-cover"
                     />
                     <div className="book-details">
-                        <h3>{book.title}</h3>
-                        <p>{book.author}</p>
+                        <p className="titleBook">
+                            <p>{book.author}</p>
+                            <h3>{book.title}</h3>
+                        </p>
+
                         <p>{book.description}</p>
-                        <p>{book.pages} pages</p>
-                        <a href={book.downloadLink} download>
-                            <button>Download</button>
-                        </a>
+                        <div className="divider"></div>
+                        <div className="pages-size">
+                            <div className="download-infos">
+                                <div className="icon">
+                                    <img src="/pages.png" alt="Pages" />
+                                    <span>{book.pages} Pages</span>
+                                </div>
+                                <div className="icon">
+                                    <img src="/size.png" alt="Size" />
+                                    <span>{book.size}</span>
+                                </div>
+                            </div>
+                            
+                            <div className="download-section">
+                                <a href={book.downloadLink} download>
+                                    <img src="download.png" alt="Download" />
+                                </a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             ))}
         </div>
-    )
+    );
 }
-
 
 export default PopularReads;
