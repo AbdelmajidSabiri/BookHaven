@@ -1,32 +1,34 @@
 const express = require("express");
+const cors = require("cors"); 
 const { MongoClient } = require("mongodb");
+require("dotenv").config({path:"./config.env"})
 
 const app = express();
+app.use(express.json());
+app.use(cors());
 const PORT = 5000;
-
-const uri = "mongodb://localhost:27017";
-const dbName = "BookHaven";
-const client = new MongoClient(uri);
 let db;
 
-// Middleware to parse JSON requests
-app.use(express.json());
-
-// Connect to MongoDB and set the database
 async function connectToDatabase() {
+
+  const dbu = process.env.ATLAS_URI
+  const client = new MongoClient(dbu)
+
   try {
     await client.connect();
-    db = client.db(dbName);
-    console.log(`Connected to database: ${dbName}`);
+    db = client.db("BookHaven");
+
+    const collections = await db.collections()
+    collections.forEach((collection) => console.log(collection.collectionName))
 
   } catch (err) {
     console.error("Failed to connect to MongoDB:", err);
   }
+
 }
 
-connectToDatabase();
 
-// Route to fetch all books
+// // Route to fetch all books
 app.get("/api/books", async (req, res) => {
   try {
     const books = await db.collection("books").find().toArray();
@@ -37,7 +39,7 @@ app.get("/api/books", async (req, res) => {
   }
 });
 
-// Route to add a new book
+// // Route to add a new book
 app.post("/api/books", async (req, res) => {
   try {
     const newBook = req.body;
@@ -45,7 +47,7 @@ app.post("/api/books", async (req, res) => {
     res.status(201).json(result.ops[0]);  // Respond with the created book
   } catch (err) {
     console.error(err);
-    res.status(500).send("Failed to add book");
+    res.status(500).json({ error: "Failed to add book" }); 
   }
 });
 
@@ -54,6 +56,4 @@ connectToDatabase().then(() => {
   app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
   });
-}).catch((err) => {
-  console.error("Error starting server:", err);
 });
