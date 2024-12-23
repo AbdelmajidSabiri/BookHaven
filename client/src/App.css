@@ -202,113 +202,116 @@ ul {
   }
 
 }
+
 .popular-reads {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2x2 layout */
   gap: 40px; /* Adjust spacing between cards */
   padding: 140px;
   background-color: #d1eff9; /* Light blue background for the section */
+
+  .book-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #E7F2F6; /* Base card color (can be dynamically adjusted) */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for the card */
+    padding: 25px;
+    width: 580px;
+    height: 380px;
+    transition: transform 0.3s ease;
+    border-top-left-radius: 30px; /* Consistent round corners */
+    border-top-right-radius: 30px;
+    border : #AFA8A8 solid 2px;
+    margin: auto;
+  }
+  
+  .book-card:hover {
+    transform: translateY(-6px); /* Slight hover effect */
+  }
+  
+  .book-cover {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    margin-right: 25px;
+  }
+  
+  
+  .book-details {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 20px; /* Space between elements */
+  }
+  
+  .book-details h3 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #222;
+    margin: 0;
+  }
+  
+  .book-details p {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+  }
+  
+  .book-details .divider {
+    height: 2.5px;
+    background-color: #ccc;
+    margin: 8px 0;
+    width: 100%;
+  }
+  
+  .book-details .pages-size {
+    display: flex;
+    align-items: center;
+    align-items: flex-start;
+    justify-content: space-between; /* Place items at both ends */
+    font-size: 11px;
+    color: #777;
+  }
+  
+  .pages-size .icon {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .pages-size .icon img {
+    width: 14px; /* Icon size */
+    height: 14px;
+  }
+  
+  .pages-size .download-infos {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 10px;
+  }
+  
+  .download-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #d7fce7; /* Green background for download button */
+    border-radius: 50%;
+    margin-left: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .download-section:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+  }
+  
+  .download-section img {
+    width: 25px;
+    height: 25px;
+  }
+  
 }
 
-.book-card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-color: #E7F2F6; /* Base card color (can be dynamically adjusted) */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for the card */
-  padding: 25px;
-  width: 580px;
-  height: 380px;
-  transition: transform 0.3s ease;
-  border-top-left-radius: 30px; /* Consistent round corners */
-  border-top-right-radius: 30px;
-  border : #AFA8A8 solid 2px;
-  margin: auto;
-}
-
-.book-card:hover {
-  transform: translateY(-6px); /* Slight hover effect */
-}
-
-.book-cover {
-  width: 200px;
-  height: 300px;
-  object-fit: cover;
-  margin-right: 25px;
-}
-
-
-.book-details {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  gap: 20px; /* Space between elements */
-}
-
-.book-details h3 {
-  font-size: 26px;
-  font-weight: bold;
-  color: #222;
-  margin: 0;
-}
-
-.book-details p {
-  font-size: 14px;
-  color: #555;
-  margin: 0;
-}
-
-.book-details .divider {
-  height: 2.5px;
-  background-color: #ccc;
-  margin: 8px 0;
-  width: 100%;
-}
-
-.book-details .pages-size {
-  display: flex;
-  align-items: center;
-  align-items: flex-start;
-  justify-content: space-between; /* Place items at both ends */
-  font-size: 11px;
-  color: #777;
-}
-
-.pages-size .icon {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.pages-size .icon img {
-  width: 14px; /* Icon size */
-  height: 14px;
-}
-
-.pages-size .download-infos {
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
-  gap: 10px;
-}
-
-.download-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  background-color: #d7fce7; /* Green background for download button */
-  border-radius: 50%;
-  margin-left: auto;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.download-section:hover {
-  transform: scale(1.1); /* Slight zoom on hover */
-}
-
-.download-section img {
-  width: 25px;
-  height: 25px;
-}
