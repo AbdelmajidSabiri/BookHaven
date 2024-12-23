@@ -14,6 +14,8 @@ async function connectToDatabase() {
   const dbu = process.env.ATLAS_URI
   const client = new MongoClient(dbu)
 
+
+  
   try {
     await client.connect();
     db = client.db("BookHaven");
