@@ -1,4 +1,4 @@
-import heroImage from '/heroSectionBigPic.png'; // Replace with your image path
+import heroImage from '/images/heroSectionBigPic.png'; // Replace with your image path
 
 function HeroSection() {
   return (
@@ -20,15 +20,15 @@ function HeroSection() {
           <img src={heroImage} alt="Person reading a book" />
         </div>
       </div>
-      <img src="/stars1.png" alt="Star" className="star star1" />
-      <img src="/stars2.png" alt="Star" className="star star2" />
-      <img src="/stars3.png" alt="Star" className="star star3" />
+      <img src="/images/stars1.png" alt="Star" className="star star1" />
+      <img src="/images/stars2.png" alt="Star" className="star star2" />
+      <img src="/images/stars3.png" alt="Star" className="star star3" />
 
       <div className="community-section">
         <div className="avatars">
-          <img src="/avatar1.png" alt="User 1" />
-          <img src="/avatar2.png" alt="User 2" />
-          <img src="/avatar3.png" alt="User 3" />
+          <img src="/images/avatar1.png" alt="User 1" />
+          <img src="/images/avatar2.png" alt="User 2" />
+          <img src="/images/avatar3.png" alt="User 3" />
         </div>
         <p>50K+ Book lovers joined</p>
       </div>

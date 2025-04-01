@@ -3,7 +3,7 @@ function NavBar(){
     return(
         <nav>
             <div className='navbar'>
-            <img src="/logoNav.png"  alt="BookHaven Logo" className="logo" />
+            <img src="/images/logoNav.png"  alt="BookHaven Logo" className="logo" />
             <ul className='navlinks'>
                 <li><a href="">Home</a></li>
                 <li><a href="">Books</a></li>

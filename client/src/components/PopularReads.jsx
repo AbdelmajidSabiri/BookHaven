@@ -22,37 +22,36 @@ function PopularReads() {
                     className="book-card"
                 >
                     <img
-                        src={book.cover}
+                        src={book.coverImageUrl}
                         alt={book.title}
                         className="book-cover"
                     />
                     <div className="book-details">
-                        <p className="titleBook">
+                        <div className="titleBook">
                             <p>{book.author}</p>
                             <h3>{book.title}</h3>
-                        </p>
+                        </div>
 
-                        <p>{book.description}</p>
+                        <p>{book.subtitle}</p>
                         <div className="divider"></div>
                         <div className="pages-size">
                             <div className="download-infos">
                                 <div className="icon">
                                     <img src="/pages.png" alt="Pages" />
-                                    <span>{book.pages} Pages</span>
+                                    <span>{book.pageCount} Pages</span>
                                 </div>
                                 <div className="icon">
                                     <img src="/size.png" alt="Size" />
-                                    <span>{book.size}</span>
+                                    <span>{book.fileSize} Mb</span>
                                 </div>
                             </div>
                             
                             <div className="download-section">
-                                <a href={book.downloadLink} download>
-                                    <img src="download.png" alt="Download" />
+                                <a href={book.fileUrl} download>
+                                    <img src="/download.png" alt="Download" />
                                 </a>
                             </div>
                         </div>
-
                     </div>
                 </div>
             ))}
