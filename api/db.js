@@ -30,7 +30,6 @@ async function connectToDatabase() {
 }
 
 
-// // Route to fetch all books
 app.get("/api/books", async (req, res) => {
   try {
     const books = await db.collection("books").find().toArray();
@@ -41,7 +40,6 @@ app.get("/api/books", async (req, res) => {
   }
 });
 
-// // Route to add a new book
 app.post("/api/books", async (req, res) => {
   try {
     const newBook = req.body;
@@ -53,7 +51,6 @@ app.post("/api/books", async (req, res) => {
   }
 });
 
-// Start the server and connect to MongoDB
 connectToDatabase().then(() => {
   app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
