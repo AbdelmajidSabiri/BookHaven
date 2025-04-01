@@ -37,18 +37,18 @@ function PopularReads() {
                         <div className="pages-size">
                             <div className="download-infos">
                                 <div className="icon">
-                                    <img src="/pages.png" alt="Pages" />
+                                    <img src="/images/pages.png" alt="Pages" />
                                     <span>{book.pageCount} Pages</span>
                                 </div>
                                 <div className="icon">
-                                    <img src="/size.png" alt="Size" />
+                                    <img src="/images/size.png" alt="Size" />
                                     <span>{book.fileSize} Mb</span>
                                 </div>
                             </div>
                             
                             <div className="download-section">
                                 <a href={book.fileUrl} download>
-                                    <img src="/download.png" alt="Download" />
+                                    <img src="/images/download.png" alt="Download" />
                                 </a>
                             </div>
                         </div>
