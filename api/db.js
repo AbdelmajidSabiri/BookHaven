@@ -9,13 +9,11 @@ app.use(cors());
 const PORT = 5000;
 let db;
 
+const dbu = process.env.ATLAS_URI
+const client = new MongoClient(dbu)
+
 async function connectToDatabase() {
 
-  const dbu = process.env.ATLAS_URI
-  const client = new MongoClient(dbu)
-
-
-  
   try {
     await client.connect();
     db = client.db("BookHaven");
